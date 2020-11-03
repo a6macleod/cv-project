@@ -45,24 +45,23 @@ class App extends React.Component {
       ],
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeGeneral = this.handleChangeGeneral.bind(this);
+    // this.saveEdit = this.saveEdit.bind(this);
   }
 
   saveEdit = (e) => {
+    // e.preventDefault();
     console.log("saveEditclicked!");
   };
 
-  handleChange = (e) => {
-    console.log(e.target.value);
-    let temp = { ...this.state.general };
-    temp.name = e.target.value;
+  handleChangeGeneral(fieldName, fieldValue) {
+    console.log(`from the app ${fieldName}, ${fieldValue}`);
     this.setState({
-      general: temp,
+      general: {
+        [fieldName]: fieldValue,
+      },
     });
-    // this.setState({
-    //   [e.target.name]: e.target.value,
-    // });
-  };
+  }
 
   handleClick = () => {
     this.setState({
@@ -77,7 +76,7 @@ class App extends React.Component {
         <Edit
           edit={this.state.edit}
           general={this.state.general}
-          handleChange={this.handleChange}
+          handleChangeGeneral={this.handleChangeGeneral}
         />
       );
     } else {
