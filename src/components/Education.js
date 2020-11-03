@@ -3,12 +3,12 @@ import uniqid from "uniqid";
 
 const Education = (props) => {
   return (
-    <div>
+    <div className="mb-5">
       <h2>Education Experience</h2>
-      <div className="row">
+      <div className="row justify-content-center">
         {props.education.map((edu) => {
           return (
-            <div key={uniqid()} className="col wrapper card p-2 m-2">
+            <div key={uniqid()} className="col-md- wrapper card p-2 m-2">
               <h3 key={uniqid()} className="school">
                 {edu.school}
               </h3>

@@ -3,9 +3,9 @@ import uniqid from "uniqid";
 
 const Experience = (props) => {
   return (
-    <div>
+    <div className="mb-2">
       <h2>Work Experience</h2>
-      <div className="row">
+      <div className="row justify-content-center">
         {props.experience.map((exp) => {
           return (
             <div key={uniqid()} className="col-sm- wrapper card p-2 m-2">
