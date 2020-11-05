@@ -47,6 +47,7 @@ class App extends React.Component {
     };
 
     this.handleChangeGeneral = this.handleChangeGeneral.bind(this);
+    this.handleChangeEducation = this.handleChangeEducation.bind(this);
     this.saveEdit = this.saveEdit.bind(this);
   }
 
@@ -66,12 +67,13 @@ class App extends React.Component {
     });
   }
 
-  handleChangeEducation(fieldName, fieldValue) {
+  handleChangeEducation(fieldName, fieldValue, index) {
+    let edu = [...this.state.education];
+    let targetEdu = { ...edu[index] };
+    targetEdu.[fieldName] = fieldValue;
+    edu[index] = targetEdu;
     this.setState({
-      education: {
-        ...this.state.general,
-        [fieldName]: fieldValue,
-      },
+      education: edu,
     });
   }
 

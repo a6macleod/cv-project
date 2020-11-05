@@ -6,9 +6,10 @@ const Education = (props) => {
     <div className="mb-5">
       <h2>Education Experience</h2>
       <div className="row justify-content-center">
-        {props.education.map((edu) => {
+        {props.education.map((edu, index) => {
           return (
             <div key={uniqid()} className="col-md- wrapper card p-2 m-2">
+              <h6>{index}</h6>
               <h3 key={uniqid()} className="school">
                 {edu.school}
               </h3>
@@ -25,6 +26,7 @@ const Education = (props) => {
           );
         })}
       </div>
+      {/* end /.row */}
     </div>
   );
 };
