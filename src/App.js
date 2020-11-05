@@ -2,7 +2,8 @@ import React from "react";
 import GeneralInformation from "./components/GeneralInformation";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
-import Edit from "./components/Edit";
+import EditGeneralInfo from "./components/EditGeneralInfo";
+import EditEducation from "./components/EditEducation";
 import "./App.css";
 
 class App extends React.Component {
@@ -46,18 +47,29 @@ class App extends React.Component {
     };
 
     this.handleChangeGeneral = this.handleChangeGeneral.bind(this);
-    // this.saveEdit = this.saveEdit.bind(this);
+    this.saveEdit = this.saveEdit.bind(this);
   }
 
-  saveEdit = (e) => {
-    // e.preventDefault();
+  saveEdit(e) {
     console.log("saveEditclicked!");
-  };
+    this.setState({
+      edit: false,
+    });
+  }
 
   handleChangeGeneral(fieldName, fieldValue) {
-    console.log(`from the app ${fieldName}, ${fieldValue}`);
     this.setState({
       general: {
+        ...this.state.general,
+        [fieldName]: fieldValue,
+      },
+    });
+  }
+
+  handleChangeEducation(fieldName, fieldValue) {
+    this.setState({
+      education: {
+        ...this.state.general,
         [fieldName]: fieldValue,
       },
     });
@@ -73,11 +85,20 @@ class App extends React.Component {
     const editMode = this.state.edit;
     if (editMode) {
       return (
-        <Edit
-          edit={this.state.edit}
-          general={this.state.general}
-          handleChangeGeneral={this.handleChangeGeneral}
-        />
+        <div className="App container">
+          <EditGeneralInfo
+            edit={this.state.edit}
+            general={this.state.general}
+            handleChangeGeneral={this.handleChangeGeneral}
+            saveEdit={this.saveEdit}
+          />
+          <EditEducation
+            edit={this.state.edit}
+            education={this.state.education}
+            handleChangeEducation={this.handleChangeEducation}
+            saveEdit={this.saveEdit}
+          />
+        </div>
       );
     } else {
       return (
