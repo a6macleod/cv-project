@@ -20,14 +20,12 @@ class App extends React.Component {
       },
       education: [
         {
-          view: true,
           school: "Western Michigan University",
           degree: "Bachelor of Science",
           focus: "Geochemistry",
           yearGraduated: "2010",
         },
         {
-          view: true,
           school: "Western Michigan University",
           degree: "Master of Science",
           focus: "Geochemistry",
@@ -36,7 +34,6 @@ class App extends React.Component {
       ],
       experience: [
         {
-          view: true,
           jobTitle: "Senior Technical Reviewer",
           company: "NSF International",
           duties: ["QC Technical Reviewer work", "Coordiante required testing"],
@@ -52,7 +49,6 @@ class App extends React.Component {
   }
 
   saveEdit(e) {
-    console.log("saveEditclicked!");
     this.setState({
       edit: false,
     });
@@ -73,7 +69,7 @@ class App extends React.Component {
     targetEdu.[fieldName] = fieldValue;
     edu[index] = targetEdu;
     this.setState({
-      education: edu,
+      education: [ ...edu ]
     });
   }
 
