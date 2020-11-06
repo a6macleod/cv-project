@@ -4,6 +4,7 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 import EditGeneralInfo from "./components/EditGeneralInfo";
 import EditEducation from "./components/EditEducation";
+import EditExperience from "./components/EditExperience";
 import "./App.css";
 
 class App extends React.Component {
@@ -38,7 +39,7 @@ class App extends React.Component {
           company: "NSF International",
           duties: ["QC Technical Reviewer work", "Coordiante required testing"],
           startYear: "2014",
-          endYear: "present",
+          endYear: "2020",
         },
       ],
     };
@@ -73,6 +74,16 @@ class App extends React.Component {
     });
   }
 
+  handleChangeExperience(fieldName, fieldValue, index) {
+    let exp = [...this.state.experience];
+    let targetExp = { ...exp[index] };
+    targetExp.[fieldName] = fieldValue;
+    exp[index] = targetExp;
+    this.setState({
+      experience: [ ...exp ]
+    });
+  }
+
   handleClick = () => {
     this.setState({
       edit: true,
@@ -94,6 +105,12 @@ class App extends React.Component {
             edit={this.state.edit}
             education={this.state.education}
             handleChangeEducation={this.handleChangeEducation}
+            saveEdit={this.saveEdit}
+          />
+          <EditExperience
+            edit={this.state.edit}
+            experience={this.state.experience}
+            handleChangeExperience={this.handleChangeExperience}
             saveEdit={this.saveEdit}
           />
         </div>

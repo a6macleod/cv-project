@@ -9,7 +9,6 @@ const Education = (props) => {
         {props.education.map((edu, index) => {
           return (
             <div key={uniqid()} className="col-md- wrapper card p-2 m-2">
-              <h6>{index}</h6>
               <h3 className="school">{edu.school}</h3>
               <h4 className="degree">{edu.degree}</h4>
               <h4 className="Focus">{edu.focus}</h4>

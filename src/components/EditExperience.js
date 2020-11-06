@@ -1,8 +1,7 @@
-//update to be edit education
 import React from "react";
 import uniqid from "uniqid";
 
-class EditEducation extends React.Component {
+class EditExperience extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
@@ -12,67 +11,83 @@ class EditEducation extends React.Component {
     const fieldName = e.target.name;
     const fieldValue = e.target.value;
     const index = e.target.getAttribute("data-index");
-    this.props.handleChangeEducation(fieldName, fieldValue, index);
+    this.props.handleChangeExperience(fieldName, fieldValue, index);
   }
 
   render() {
     return (
       <div className="mt-2 mb-5">
         <form>
-          <h2>Education</h2>
+          <h2>Experience</h2>
           <div className="row justify-content-center">
-            {this.props.education.map((edu, index) => {
+            {this.props.experience.map((exp, index) => {
               return (
-                <div key={uniqid()} className="col-md- wrapper card p-2 m-2">
+                <div key={uniqid()} className="col-lg- wrapper card p-2 m-2">
                   <div className="wrapper d-flex justify-content-center align-items-center">
-                    <label className="name mr-3 text-muted" htmlFor="school">
-                      School:
+                    <label className="name mr-3 text-muted" htmlFor="title">
+                      Job Title:
                     </label>
                     <input
                       type="text"
-                      name="school"
+                      name="title"
                       data-index={index}
-                      value={edu.school}
+                      value={exp.jobTitle}
                       onChange={this.handleChange}
                     />
                   </div>
                   <div className="wrapper d-flex justify-content-center align-items-center">
-                    <label className="name mr-3 text-muted" htmlFor="degree">
-                      Degree:
+                    <label className="name mr-3 text-muted" htmlFor="company">
+                      Company:
                     </label>
                     <input
                       type="text"
-                      name="degree"
+                      name="company"
                       data-index={index}
-                      value={edu.degree}
+                      value={exp.company}
+                      onChange={this.handleChange}
+                    />
+                  </div>
+
+                  <div className="wrapper d-flex justify-content-center align-items-center mt-2 mb-2">
+                    <label className="name mr-3 text-muted" htmlFor="duties">
+                      Duties:
+                    </label>
+                    <div className="d-flex flex-column">
+                      {exp.duties.map((duty, indexDuty) => {
+                        return (
+                          <input
+                            type="text"
+                            name="duties"
+                            data-index={indexDuty}
+                            value={duty}
+                            onChange={this.handleChange}
+                          />
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <div className="wrapper d-flex justify-content-center align-items-center">
+                    <label className="name mr-3 text-muted" htmlFor="startYear">
+                      Start Year:
+                    </label>
+                    <input
+                      type="number"
+                      name="startYear"
+                      data-index={index}
+                      value={exp.startYear}
                       onChange={this.handleChange}
                     />
                   </div>
 
                   <div className="wrapper d-flex justify-content-center align-items-center">
-                    <label className="name mr-3 text-muted" htmlFor="focus">
-                      Focus:
-                    </label>
-                    <input
-                      type="text"
-                      name="focus"
-                      data-index={index}
-                      value={edu.focus}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                  <div className="wrapper d-flex justify-content-center align-items-center">
-                    <label
-                      className="name mr-3 text-muted"
-                      htmlFor="yearGraduated"
-                    >
-                      Year Graduated:
+                    <label className="name mr-3 text-muted" htmlFor="endYear">
+                      End Year:
                     </label>
                     <input
                       type="number"
-                      name="yearGraduated"
+                      name="endYear"
                       data-index={index}
-                      value={edu.yearGraduated}
+                      value={exp.endYear}
                       onChange={this.handleChange}
                     />
                   </div>
@@ -88,4 +103,4 @@ class EditEducation extends React.Component {
   }
 }
 
-export default EditEducation;
+export default EditExperience;

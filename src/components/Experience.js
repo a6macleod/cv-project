@@ -26,10 +26,10 @@ const Experience = (props) => {
                 </ul>
               </div>
               <h4 key={uniqid()} className="startYear">
-                {exp.startYear}
+                Start: {exp.startYear}
               </h4>
               <h4 key={uniqid()} className="endYear">
-                {exp.endYear}
+                End: {exp.endYear}
               </h4>
             </div>
           );
