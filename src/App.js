@@ -46,7 +46,24 @@ class App extends React.Component {
 
     this.handleChangeGeneral = this.handleChangeGeneral.bind(this);
     this.handleChangeEducation = this.handleChangeEducation.bind(this);
+    this.handleChangeExperience = this.handleChangeExperience.bind(this);
     this.saveEdit = this.saveEdit.bind(this);
+    this.addSchool = this.addSchool.bind(this);
+  }
+
+  addSchool() {
+    let temp = [...this.state.education];
+    const newSchool = {
+      school: "",
+      degree: "",
+      focus: "",
+      yearGraduated: "",
+    };
+    const tempState = temp.concat(newSchool);
+    console.log(tempState);
+    this.setState({
+      education: tempState,
+    });
   }
 
   saveEdit(e) {
@@ -67,20 +84,20 @@ class App extends React.Component {
   handleChangeEducation(fieldName, fieldValue, index) {
     let edu = [...this.state.education];
     let targetEdu = { ...edu[index] };
-    targetEdu.[fieldName] = fieldValue;
+    targetEdu[fieldName] = fieldValue;
     edu[index] = targetEdu;
     this.setState({
-      education: [ ...edu ]
+      education: [...edu],
     });
   }
 
   handleChangeExperience(fieldName, fieldValue, index) {
     let exp = [...this.state.experience];
     let targetExp = { ...exp[index] };
-    targetExp.[fieldName] = fieldValue;
+    targetExp[fieldName] = fieldValue;
     exp[index] = targetExp;
     this.setState({
-      experience: [ ...exp ]
+      experience: [...exp],
     });
   }
 
@@ -106,6 +123,7 @@ class App extends React.Component {
             education={this.state.education}
             handleChangeEducation={this.handleChangeEducation}
             saveEdit={this.saveEdit}
+            addSchool={this.addSection}
           />
           <EditExperience
             edit={this.state.edit}
