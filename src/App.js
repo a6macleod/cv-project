@@ -49,6 +49,22 @@ class App extends React.Component {
     this.handleChangeExperience = this.handleChangeExperience.bind(this);
     this.saveEdit = this.saveEdit.bind(this);
     this.addSchool = this.addSchool.bind(this);
+    this.addExperience = this.addExperience.bind(this);
+  }
+
+  addExperience() {
+    let temp = [...this.state.experience];
+    const newExperience = {
+      jobTitle: "",
+      company: "",
+      duties: [],
+      startYear: "",
+      endYear: "",
+    };
+    const tempState = temp.concat(newExperience);
+    this.setState({
+      experience: tempState,
+    });
   }
 
   addSchool() {
@@ -60,7 +76,6 @@ class App extends React.Component {
       yearGraduated: "",
     };
     const tempState = temp.concat(newSchool);
-    console.log(tempState);
     this.setState({
       education: tempState,
     });
@@ -130,6 +145,7 @@ class App extends React.Component {
             experience={this.state.experience}
             handleChangeExperience={this.handleChangeExperience}
             saveEdit={this.saveEdit}
+            addExperience={this.addExperience}
           />
         </div>
       );

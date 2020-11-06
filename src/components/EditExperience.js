@@ -19,6 +19,14 @@ class EditExperience extends React.Component {
       <div className="mt-2 mb-5">
         <form>
           <h2>Experience</h2>
+          <div
+            className="btn btn-primary"
+            onClick={() => {
+              this.props.addExperience(this.props.education);
+            }}
+          >
+            <i class="far fa-plus-square"></i>
+          </div>
           <div className="row justify-content-center">
             {this.props.experience.map((exp, index) => {
               return (
