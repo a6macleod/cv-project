@@ -32,6 +32,14 @@ class EditEducation extends React.Component {
             {this.props.education.map((edu, index) => {
               return (
                 <div key={uniqid()} className="col-md- wrapper card p-2 m-2">
+                  <div
+                    onClick={() => {
+                      this.props.deleteEducation(index);
+                    }}
+                    className="btn btn-secondary"
+                  >
+                    <i class="fas fa-times"></i>
+                  </div>
                   <div className="wrapper d-flex justify-content-center align-items-center">
                     <label className="name mr-3 text-muted" htmlFor="school">
                       School:

@@ -50,6 +50,25 @@ class App extends React.Component {
     this.saveEdit = this.saveEdit.bind(this);
     this.addSchool = this.addSchool.bind(this);
     this.addExperience = this.addExperience.bind(this);
+    this.deleteEducation = this.deleteEducation.bind(this);
+    this.deleteExperience = this.deleteExperience.bind(this);
+  }
+
+  deleteExperience(index) {
+    let exp = [...this.state.experience];
+    exp.splice(index, 1);
+    this.setState({
+      experience: [...exp],
+    });
+  }
+
+  deleteEducation(index) {
+    let edu = [...this.state.education];
+    edu.splice(index, 1);
+    console.log(edu);
+    this.setState({
+      education: [...edu],
+    });
   }
 
   addExperience() {
@@ -139,6 +158,7 @@ class App extends React.Component {
             handleChangeEducation={this.handleChangeEducation}
             saveEdit={this.saveEdit}
             addSchool={this.addSection}
+            deleteEducation={this.deleteEducation}
           />
           <EditExperience
             edit={this.state.edit}
@@ -146,6 +166,7 @@ class App extends React.Component {
             handleChangeExperience={this.handleChangeExperience}
             saveEdit={this.saveEdit}
             addExperience={this.addExperience}
+            deleteExperience={this.deleteExperience}
           />
         </div>
       );

@@ -31,6 +31,14 @@ class EditExperience extends React.Component {
             {this.props.experience.map((exp, index) => {
               return (
                 <div key={uniqid()} className="col-lg- wrapper card p-2 m-2">
+                  <div
+                    onClick={() => {
+                      this.props.deleteExperience(index);
+                    }}
+                    className="btn btn-secondary"
+                  >
+                    <i class="fas fa-times"></i>
+                  </div>
                   <div className="wrapper d-flex justify-content-center align-items-center">
                     <label className="name mr-3 text-muted" htmlFor="title">
                       Job Title:
