@@ -69,17 +69,15 @@ class EditExperience extends React.Component {
                       Duties:
                     </label>
                     <div className="d-flex flex-column">
-                      {exp.duties.map((duty, indexDuty) => {
-                        return (
-                          <input
-                            type="text"
-                            name="duties"
-                            data-index={indexDuty}
-                            value={duty}
-                            onChange={this.handleChange}
-                          />
-                        );
-                      })}
+                      <textarea
+                        id="experienceDuty"
+                        cols="30"
+                        rows="10"
+                        type="textarea"
+                        name="duties"
+                        value={exp.duties}
+                        onChange={this.handleChange}
+                      />
                     </div>
                   </div>
                   <div className="wrapper d-flex justify-content-center align-items-center">

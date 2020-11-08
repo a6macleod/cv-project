@@ -8,22 +8,23 @@ const Experience = (props) => {
       <div className="row justify-content-center">
         {props.experience.map((exp) => {
           return (
-            <div key={uniqid()} className="col-sm- wrapper card p-2 m-2">
+            <div
+              key={uniqid()}
+              className="col-sm- wrapper card p-2 m-2 text-align-center"
+            >
               <h3 key={uniqid()} className="jobTitle">
                 {exp.jobTitle}
               </h3>
               <h4 key={uniqid()} className="company">
                 {exp.company}
               </h4>
-              <div className="wrapper">
+              <div className="wrapper w-75 m-auto">
                 <h4 key={uniqid()} className="duties">
                   Duties
                 </h4>
-                <ul>
-                  {exp.duties.map((duty) => {
-                    return <li key={uniqid()}>{duty}</li>;
-                  })}
-                </ul>
+                <p className="" key={uniqid()}>
+                  {exp.duties}
+                </p>
               </div>
               <h4 key={uniqid()} className="startYear">
                 Start: {exp.startYear}

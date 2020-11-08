@@ -37,7 +37,8 @@ class App extends React.Component {
         {
           jobTitle: "Senior Technical Reviewer",
           company: "NSF International",
-          duties: ["QC Technical Reviewer work", "Coordiante required testing"],
+          duties:
+            "QC Technical Reviewer work. Coordiante required testing between the account managers, clients, and laboratory.",
           startYear: "2014",
           endYear: "2020",
         },
@@ -52,6 +53,22 @@ class App extends React.Component {
     this.addExperience = this.addExperience.bind(this);
     this.deleteEducation = this.deleteEducation.bind(this);
     this.deleteExperience = this.deleteExperience.bind(this);
+    this.addDuty = this.addDuty.bind(this);
+  }
+
+  addDuty() {
+    let temp = [...this.state.experience];
+    const newExperience = {
+      jobTitle: "",
+      company: "",
+      duties: [],
+      startYear: "",
+      endYear: "",
+    };
+    const tempState = temp.concat(newExperience);
+    this.setState({
+      experience: tempState,
+    });
   }
 
   deleteExperience(index) {
