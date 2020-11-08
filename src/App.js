@@ -65,7 +65,6 @@ class App extends React.Component {
   deleteEducation(index) {
     let edu = [...this.state.education];
     edu.splice(index, 1);
-    console.log(edu);
     this.setState({
       education: [...edu],
     });
