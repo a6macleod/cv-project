@@ -110,7 +110,6 @@ class EditExperience extends React.Component {
             })}
           </div>
           {/* /.row */}
-          <input type="button" onClick={this.props.saveEdit} value="save" />
         </form>
       </div>
     );

@@ -184,6 +184,7 @@ class App extends React.Component {
             addExperience={this.addExperience}
             deleteExperience={this.deleteExperience}
           />
+          <input type="button" onClick={this.saveEdit} value="save" />
         </div>
       );
     } else {
@@ -194,10 +195,18 @@ class App extends React.Component {
             email={this.state.general.email}
             phone={this.state.general.phone}
             view={this.state.general.view}
-            handleClick={this.handleClick}
           />
           <Education education={this.state.education} />
           <Experience experience={this.state.experience} />
+
+          <button
+            className="btn btn-primary p-1"
+            onClick={() => {
+              this.handleClick();
+            }}
+          >
+            edit<i className="p-2 far fa-edit"></i>
+          </button>
         </div>
       );
     }

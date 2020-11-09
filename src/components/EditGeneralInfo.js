@@ -48,7 +48,6 @@ class EditGeneralInfo extends React.Component {
                   onChange={this.handleChange}
                 />
               </div>
-              <input type="button" onClick={this.props.saveEdit} value="save" />
             </div>
             {/* /.card */}
           </div>

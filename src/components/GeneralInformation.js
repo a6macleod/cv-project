@@ -6,14 +6,6 @@ const GeneralInformation = (props) => {
     <div className="mt-2 mb-5">
       <div className="wrapper">
         <h1 className="name">{props.name}</h1>
-        <button
-          className="btn btn-primary p-1"
-          onClick={() => {
-            props.handleClick();
-          }}
-        >
-          edit<i className="p-2 far fa-edit"></i>
-        </button>
       </div>
       <div className="row justify-content-center">
         <div className="card col-md- d-flex justify-content-center mt-3 p-2">
