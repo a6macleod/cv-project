@@ -38,7 +38,7 @@ class App extends React.Component {
           jobTitle: "Senior Technical Reviewer",
           company: "NSF International",
           duties:
-            "QC Technical Reviewer work. Coordiante required testing between the account managers, clients, and laboratory.",
+            "QC Technical Reviewer work. Coordiante required testing between the account managers, clients, and the laboratory.",
           startYear: "2014",
           endYear: "2020",
         },
@@ -140,16 +140,6 @@ class App extends React.Component {
       education: [...edu],
     });
   }
-
-  // handleChangeEducation(fieldName, fieldValue, index) {
-  //   let edu = [...this.state.education];
-  //   let targetEdu = { ...edu[index] };
-  //   targetEdu[fieldName] = fieldValue;
-  //   edu[index] = targetEdu;
-  //   this.setState({
-  //     education: [...edu],
-  //   });
-  // }
 
   handleChangeExperience(fieldName, fieldValue, index) {
     let exp = [...this.state.experience];
