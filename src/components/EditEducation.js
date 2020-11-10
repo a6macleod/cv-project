@@ -1,6 +1,5 @@
 //update to be edit education
 import React from "react";
-import uniqid from "uniqid";
 
 class EditEducation extends React.Component {
   constructor(props) {
@@ -26,19 +25,19 @@ class EditEducation extends React.Component {
               this.props.addSchool(this.props.education);
             }}
           >
-            <i class="far fa-plus-square"></i>
+            <i className="far fa-plus-square"></i>
           </div>
           <div className="row justify-content-center">
             {this.props.education.map((edu, index) => {
               return (
-                <div key={uniqid()} className="col-md- wrapper card p-2 m-2">
+                <div key={index} className="col-md- wrapper card p-2 m-2">
                   <div
                     onClick={() => {
                       this.props.deleteEducation(index);
                     }}
                     className="btn btn-secondary"
                   >
-                    <i class="fas fa-times"></i>
+                    <i className="fas fa-times"></i>
                   </div>
                   <div className="wrapper d-flex justify-content-center align-items-center">
                     <label className="name mr-3 text-muted" htmlFor="school">

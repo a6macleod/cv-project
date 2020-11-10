@@ -141,6 +141,16 @@ class App extends React.Component {
     });
   }
 
+  // handleChangeEducation(fieldName, fieldValue, index) {
+  //   let edu = [...this.state.education];
+  //   let targetEdu = { ...edu[index] };
+  //   targetEdu[fieldName] = fieldValue;
+  //   edu[index] = targetEdu;
+  //   this.setState({
+  //     education: [...edu],
+  //   });
+  // }
+
   handleChangeExperience(fieldName, fieldValue, index) {
     let exp = [...this.state.experience];
     let targetExp = { ...exp[index] };
@@ -166,13 +176,11 @@ class App extends React.Component {
             edit={this.state.edit}
             general={this.state.general}
             handleChangeGeneral={this.handleChangeGeneral}
-            saveEdit={this.saveEdit}
           />
           <EditEducation
             edit={this.state.edit}
             education={this.state.education}
             handleChangeEducation={this.handleChangeEducation}
-            saveEdit={this.saveEdit}
             addSchool={this.addSection}
             deleteEducation={this.deleteEducation}
           />
@@ -180,11 +188,15 @@ class App extends React.Component {
             edit={this.state.edit}
             experience={this.state.experience}
             handleChangeExperience={this.handleChangeExperience}
-            saveEdit={this.saveEdit}
             addExperience={this.addExperience}
             deleteExperience={this.deleteExperience}
           />
-          <input type="button" onClick={this.saveEdit} value="save" />
+          <input
+            className="mb-5"
+            type="button"
+            onClick={this.saveEdit}
+            value="save"
+          />
         </div>
       );
     } else {
@@ -200,7 +212,7 @@ class App extends React.Component {
           <Experience experience={this.state.experience} />
 
           <button
-            className="btn btn-primary p-1"
+            className="btn btn-primary mb-5 p-1"
             onClick={() => {
               this.handleClick();
             }}
