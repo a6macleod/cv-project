@@ -1,7 +1,6 @@
 import React from "react";
 
 const GeneralInformation = (props) => {
-  // enter education info
   return (
     <div className="mt-2 mb-5">
       <div className="row justify-content-center">

@@ -2,10 +2,6 @@ import React from "react";
 import EditGeneralInfo from "./EditGeneralInfo";
 
 class Edit extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <EditGeneralInfo
