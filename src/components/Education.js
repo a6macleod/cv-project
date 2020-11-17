@@ -1,22 +1,7 @@
 import React, { useState } from "react";
 import uniqid from "uniqid";
 
-/* education: [
-  {
-    school: "Western Michigan University",
-    degree: "Bachelor of Science",
-    focus: "Geochemistry",
-    yearGraduated: "2010",
-  },
-  {
-    school: "Western Michigan University",
-    degree: "Master of Science",
-    focus: "Geochemistry",
-    yearGraduated: "2013",
-  },
-], */
-
-const Education = (props) => {
+const Education = () => {
   const [schoolOne, setSchoolOne] = useState("Western Michigan University");
   const [degreeOne, setDegreeOne] = useState("Bachelor of Science");
   const [focusOne, setFocusOne] = useState("Geochemistry");

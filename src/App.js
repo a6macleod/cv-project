@@ -19,20 +19,6 @@ class App extends React.Component {
         email: "a6macleod@gmail.com",
         phone: "(734)-395-0000",
       },
-      education: [
-        {
-          school: "Western Michigan University",
-          degree: "Bachelor of Science",
-          focus: "Geochemistry",
-          yearGraduated: "2010",
-        },
-        {
-          school: "Western Michigan University",
-          degree: "Master of Science",
-          focus: "Geochemistry",
-          yearGraduated: "2013",
-        },
-      ],
       experience: [
         {
           jobTitle: "Senior Technical Reviewer",
@@ -169,7 +155,6 @@ class App extends React.Component {
           />
           <EditEducation
             edit={this.state.edit}
-            education={this.state.education}
             handleChangeEducation={this.handleChangeEducation}
             addSchool={this.addSection}
             deleteEducation={this.deleteEducation}

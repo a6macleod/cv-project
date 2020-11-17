@@ -1,40 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import uniqid from "uniqid";
 
-const Experience = (props) => {
+const Experience = () => {
+  const [jobTitle, setJobTitle] = useState("Senior Technical Reviewer");
+  const [company, setCompany] = useState("NSF International");
+  const [duties, setDuties] = useState(
+    "QC Technical Reviewer work. Coordiante required testing between the account managers, clients, and the laboratory."
+  );
+  const [startYear, setStartYear] = useState(2014);
+  const [endYear, setEndYear] = useState(2020);
+
   return (
     <div className="mb-2">
       <h2>Work Experience</h2>
       <div className="row justify-content-center">
-        {props.experience.map((exp) => {
-          return (
-            <div
-              key={uniqid()}
-              className="col-sm- wrapper card p-2 m-2 text-align-center"
-            >
-              <h3 key={uniqid()} className="jobTitle">
-                {exp.jobTitle}
-              </h3>
-              <h4 key={uniqid()} className="company">
-                {exp.company}
-              </h4>
-              <div className="wrapper w-75 m-auto">
-                <h4 key={uniqid()} className="duties">
-                  Duties
-                </h4>
-                <p className="" key={uniqid()}>
-                  {exp.duties}
-                </p>
-              </div>
-              <h4 key={uniqid()} className="startYear">
-                Start: {exp.startYear}
-              </h4>
-              <h4 key={uniqid()} className="endYear">
-                End: {exp.endYear}
-              </h4>
-            </div>
-          );
-        })}
+        <div className="col-sm- wrapper card p-2 m-2 text-align-center">
+          <h3 className="jobTitle">{jobTitle}</h3>
+          <h4 className="company">{company}</h4>
+          <div className="wrapper w-75 m-auto">
+            <h4 className="duties">Duties</h4>
+            <p className="">{duties}</p>
+          </div>
+          <h4 className="startYear">Start: {startYear}</h4>
+          <h4 className="endYear">End: {endYear}</h4>
+        </div>
       </div>
     </div>
   );
