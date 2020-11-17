@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import uniqid from "uniqid";
 
 const Education = () => {
   const [schoolOne, setSchoolOne] = useState("Western Michigan University");
@@ -15,13 +14,13 @@ const Education = () => {
     <div className="mb-5">
       <h2>Education Experience</h2>
       <div className="row justify-content-center">
-        <div key={uniqid()} className="col-md- wrapper card p-2 m-2">
+        <div className="col-md- wrapper card p-2 m-2">
           <h3 className="school">{schoolOne}</h3>
           <h4 className="degree">{degreeOne}</h4>
           <h4 className="Focus">{focusOne}</h4>
           <h4 className="yearGraduated">{yearGraduatedOne}</h4>
         </div>
-        <div key={uniqid()} className="col-md- wrapper card p-2 m-2">
+        <div className="col-md- wrapper card p-2 m-2">
           <h3 className="school">{schoolTwo}</h3>
           <h4 className="degree">{degreeTwo}</h4>
           <h4 className="Focus">{focusTwo}</h4>

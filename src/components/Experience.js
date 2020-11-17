@@ -5,7 +5,7 @@ const Experience = () => {
   const [jobTitle, setJobTitle] = useState("Senior Technical Reviewer");
   const [company, setCompany] = useState("NSF International");
   const [duties, setDuties] = useState(
-    "QC Technical Reviewer work. Coordiante required testing between the account managers, clients, and the laboratory."
+    "QC Technical Reviewer work. Coordinate required testing between the account managers, clients, and the laboratory."
   );
   const [startYear, setStartYear] = useState(2014);
   const [endYear, setEndYear] = useState(2020);

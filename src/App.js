@@ -11,26 +11,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      edit: false,
-      general: {
-        view: true,
-        name: "Andrew MacLeod",
-        email: "a6macleod@gmail.com",
-        phone: "(734)-395-0000",
-      },
-      experience: [
-        {
-          jobTitle: "Senior Technical Reviewer",
-          company: "NSF International",
-          duties:
-            "QC Technical Reviewer work. Coordiante required testing between the account managers, clients, and the laboratory.",
-          startYear: "2014",
-          endYear: "2020",
-        },
-      ],
-    };
-
     this.handleChangeGeneral = this.handleChangeGeneral.bind(this);
     this.handleChangeEducation = this.handleChangeEducation.bind(this);
     this.handleChangeExperience = this.handleChangeExperience.bind(this);
@@ -144,59 +124,13 @@ class App extends React.Component {
   };
 
   render() {
-    const editMode = this.state.edit;
-    if (editMode) {
-      return (
-        <div className="App container">
-          <EditGeneralInfo
-            edit={this.state.edit}
-            general={this.state.general}
-            handleChangeGeneral={this.handleChangeGeneral}
-          />
-          <EditEducation
-            edit={this.state.edit}
-            handleChangeEducation={this.handleChangeEducation}
-            addSchool={this.addSection}
-            deleteEducation={this.deleteEducation}
-          />
-          <EditExperience
-            edit={this.state.edit}
-            experience={this.state.experience}
-            handleChangeExperience={this.handleChangeExperience}
-            addExperience={this.addExperience}
-            deleteExperience={this.deleteExperience}
-          />
-          <input
-            className="mb-5"
-            type="button"
-            onClick={this.saveEdit}
-            value="save"
-          />
-        </div>
-      );
-    } else {
-      return (
-        <div className="App container">
-          <GeneralInformation
-            name={this.state.general.name}
-            email={this.state.general.email}
-            phone={this.state.general.phone}
-            view={this.state.general.view}
-          />
-          <Education education={this.state.education} />
-          <Experience experience={this.state.experience} />
-
-          <button
-            className="btn btn-primary mb-5 p-1"
-            onClick={() => {
-              this.handleClick();
-            }}
-          >
-            edit<i className="p-2 far fa-edit"></i>
-          </button>
-        </div>
-      );
-    }
+    return (
+      <div className="App container">
+        <GeneralInformation />
+        <Education />
+        <Experience />
+      </div>
+    );
   }
 }
 
