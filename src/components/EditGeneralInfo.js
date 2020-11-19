@@ -19,7 +19,11 @@ class EditGeneralInfo extends React.Component {
           <div className="row justify-content-center">
             <div className="card col-md- d-flex justify-content-center mt-3 p-2">
               <h2>Contact Information</h2>
-              <div role="button" className="btn btn-primary mb-2">
+              <div
+                role="button"
+                className="btn btn-primary mb-2"
+                onClick={this.props.saveEdit}
+              >
                 <i class="fas fa-check-circle"></i>
               </div>
               <div className="wrapper d-flex justify-content-center align-items-center">

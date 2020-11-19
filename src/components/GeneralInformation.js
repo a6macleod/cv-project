@@ -21,7 +21,13 @@ const GeneralInformation = (props) => {
       ...generalInfo,
       editView: true,
     });
-    console.log(generalInfo.editView);
+  };
+
+  const saveEdit = () => {
+    setGeneralInfo({
+      ...generalInfo,
+      editView: false,
+    });
   };
 
   if (generalInfo.editView) {
@@ -29,6 +35,7 @@ const GeneralInformation = (props) => {
       <EditGeneralInfo
         generalInfo={generalInfo}
         handleChangeGeneral={handleChangeGeneral}
+        saveEdit={saveEdit}
       />
     );
   } else {
