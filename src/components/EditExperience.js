@@ -18,6 +18,9 @@ class EditExperience extends React.Component {
       <div className="mt-2 mb-5">
         <form>
           <h2>Experience</h2>
+          <div role="button" className="btn btn-primary mb-2">
+            <i class="fas fa-check-circle"></i>
+          </div>
           <div
             className="btn btn-primary"
             onClick={() => {

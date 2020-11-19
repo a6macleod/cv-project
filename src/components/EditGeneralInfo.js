@@ -19,12 +19,15 @@ class EditGeneralInfo extends React.Component {
           <div className="row justify-content-center">
             <div className="card col-md- d-flex justify-content-center mt-3 p-2">
               <h2>Contact Information</h2>
+              <div role="button" className="btn btn-primary mb-2">
+                <i class="fas fa-check-circle"></i>
+              </div>
               <div className="wrapper d-flex justify-content-center align-items-center">
                 <label className="name mr-3 text-muted">Name:</label>
                 <input
                   type="text"
                   name="name"
-                  value={this.props.general.name}
+                  value={this.props.generalInfo.name}
                   onChange={this.handleChange}
                 />
               </div>
@@ -34,7 +37,7 @@ class EditGeneralInfo extends React.Component {
                 <input
                   className="email"
                   name="email"
-                  value={this.props.general.email}
+                  value={this.props.generalInfo.email}
                   onChange={this.handleChange}
                 />
               </div>
@@ -44,7 +47,7 @@ class EditGeneralInfo extends React.Component {
                 <input
                   className="phone"
                   name="phone"
-                  value={this.props.general.phone}
+                  value={this.props.generalInfo.phone}
                   onChange={this.handleChange}
                 />
               </div>

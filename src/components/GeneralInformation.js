@@ -9,13 +9,28 @@ const GeneralInformation = (props) => {
     phone: "(734)-395-0000",
   });
 
+  const handleChangeGeneral = (fieldName, fieldValue) => {
+    setGeneralInfo({
+      ...generalInfo,
+      [fieldName]: fieldValue,
+    });
+  };
+
   const editInfo = () => {
-    setGeneralInfo((generalInfo.editView = true));
+    setGeneralInfo({
+      ...generalInfo,
+      editView: true,
+    });
     console.log(generalInfo.editView);
   };
 
   if (generalInfo.editView) {
-    return <EditGeneralInfo generalInfo={generalInfo} />;
+    return (
+      <EditGeneralInfo
+        generalInfo={generalInfo}
+        handleChangeGeneral={handleChangeGeneral}
+      />
+    );
   } else {
     return (
       <div className="mt-2 mb-5">
