@@ -42,14 +42,13 @@ const GeneralInformation = (props) => {
     return (
       <div className="mt-2 mb-5">
         <div className="row justify-content-center">
+          <h2>Contact Information</h2>
+          <div className="btn" onClick={editInfo}>
+            <i className="text-muted fas fa-pencil-alt"></i>
+          </div>
+        </div>
+        <div className="row justify-content-center">
           <div className="card col-lg- d-flex justify-content-center mt-3 p-2">
-            <h2>
-              Contact Information
-              <div className="btn" onClick={editInfo}>
-                <i className="text-muted fas fa-pencil-alt"></i>
-              </div>
-            </h2>
-
             <div className="wrapper d-flex justify-content-center align-items-center">
               <h4 className="mr-3 text-muted">Name:</h4>
               <h3 className="name">{generalInfo.name}</h3>
