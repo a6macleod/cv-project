@@ -4,22 +4,18 @@ import EditEducation from "./EditEducation";
 const Education = () => {
   const [education, setEducation] = useState({
     editView: false,
-    undergrad: {
-      school: "Western Michigan University",
-      degree: "Bachelor of Science",
-      focus: "Geochemistry",
-      yearGraduated: "2010",
-    },
-    graduate: {
-      school: "Western Michigan University",
-      degree: "Bachelor of Science",
-      focus: "Geochemistry",
-      yearGraduated: "2013",
-    },
+    undergradSchool: "Western Michigan University",
+    undergradDegree: "Bachelor of Science",
+    undergradFocus: "Geochemistry",
+    undergradYearGraduated: "2010",
+    graduateSchool: "Western Michigan University",
+    graduateDegree: "Bachelor of Science",
+    graduateFocus: "Geochemistry",
+    graduateYearGraduated: "2013",
   });
 
   const saveEdit = () => {
-    education({
+    setEducation({
       ...education,
       editView: false,
     });
@@ -43,7 +39,7 @@ const Education = () => {
     return (
       <EditEducation
         education={education}
-        handleChangeGeneral={handleChangeEducation}
+        handleChangeEducation={handleChangeEducation}
         saveEdit={saveEdit}
       />
     );
@@ -58,20 +54,18 @@ const Education = () => {
         </h2>
         <div className="row justify-content-center">
           <div className="col-md- wrapper card p-2 m-2">
-            <h3 className="school">{education.undergrad.school}</h3>
-            <h4 className="degree">{education.undergrad.degree}</h4>
-            <h4 className="Focus">{education.undergrad.focus}</h4>
+            <h3 className="school">{education.undergradSchool}</h3>
+            <h4 className="degree">{education.undergradDegree}</h4>
+            <h4 className="Focus">{education.undergradFocus}</h4>
             <h4 className="yearGraduated">
-              {education.undergrad.yearGraduated}
+              {education.undergradYearGraduated}
             </h4>
           </div>
           <div className="col-md- wrapper card p-2 m-2">
-            <h3 className="school">{education.graduate.school}</h3>
-            <h4 className="degree">{education.graduate.degree}</h4>
-            <h4 className="Focus">{education.graduate.focus}</h4>
-            <h4 className="yearGraduated">
-              {education.graduate.yearGraduated}
-            </h4>
+            <h3 className="school">{education.graduateSchool}</h3>
+            <h4 className="degree">{education.graduateDegree}</h4>
+            <h4 className="Focus">{education.graduateFocus}</h4>
+            <h4 className="yearGraduated">{education.graduateYearGraduated}</h4>
           </div>
         </div>
         {/* end /.row */}

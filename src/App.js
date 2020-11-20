@@ -11,8 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleChangeGeneral = this.handleChangeGeneral.bind(this);
-    this.handleChangeEducation = this.handleChangeEducation.bind(this);
+    // this.handleChangeGeneral = this.handleChangeGeneral.bind(this);
+    // this.handleChangeEducation = this.handleChangeEducation.bind(this);
     this.handleChangeExperience = this.handleChangeExperience.bind(this);
     this.saveEdit = this.saveEdit.bind(this);
     this.addSchool = this.addSchool.bind(this);
@@ -85,15 +85,6 @@ class App extends React.Component {
   saveEdit(e) {
     this.setState({
       edit: false,
-    });
-  }
-
-  handleChangeGeneral(fieldName, fieldValue) {
-    this.setState({
-      general: {
-        ...this.state.general,
-        [fieldName]: fieldValue,
-      },
     });
   }
 

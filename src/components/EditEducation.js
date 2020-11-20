@@ -10,8 +10,8 @@ class EditEducation extends React.Component {
   handleChange(e) {
     const fieldName = e.target.name;
     const fieldValue = e.target.value;
-    const index = e.target.getAttribute("data-index");
-    this.props.handleChangeEducation(fieldName, fieldValue, index);
+    console.log(fieldName, fieldValue);
+    this.props.handleChangeEducation(fieldName, fieldValue);
   }
 
   render() {
@@ -20,80 +20,111 @@ class EditEducation extends React.Component {
         <form>
           <h2>Education</h2>
           <div
-            className="btn btn-primary"
-            onClick={() => {
-              this.props.addSchool(this.props.education);
-            }}
+            role="button"
+            className="btn btn-primary mb-2"
+            onClick={this.props.saveEdit}
           >
-            <i className="far fa-plus-square"></i>
+            <i className="fas fa-check-circle"></i>
           </div>
           <div className="row justify-content-center">
-            {this.props.education.map((edu, index) => {
-              return (
-                <div key={index} className="col-md- wrapper card p-2 m-2">
-                  <div
-                    onClick={() => {
-                      this.props.deleteEducation(index);
-                    }}
-                    className="btn btn-secondary"
-                  >
-                    <i className="fas fa-times"></i>
-                  </div>
-                  <div className="wrapper d-flex justify-content-center align-items-center">
-                    <label className="name mr-3 text-muted" htmlFor="school">
-                      School:
-                    </label>
-                    <input
-                      type="text"
-                      name="school"
-                      data-index={index}
-                      value={edu.school}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                  <div className="wrapper d-flex justify-content-center align-items-center">
-                    <label className="name mr-3 text-muted" htmlFor="degree">
-                      Degree:
-                    </label>
-                    <input
-                      type="text"
-                      name="degree"
-                      data-index={index}
-                      value={edu.degree}
-                      onChange={this.handleChange}
-                    />
-                  </div>
+            {/* start .card */}
+            <div className="col-md- wrapper card p-2 m-2">
+              <div className="wrapper d-flex justify-content-center align-items-center">
+                <label className="name mr-3 text-muted" htmlFor="school">
+                  School:
+                </label>
+                <input
+                  type="text"
+                  name="undergradSchool"
+                  value={this.props.education.undergradSchool}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="wrapper d-flex justify-content-center align-items-center">
+                <label className="name mr-3 text-muted" htmlFor="degree">
+                  Degree:
+                </label>
+                <input
+                  type="text"
+                  name="undergradDegree"
+                  value={this.props.education.undergradDegree}
+                  onChange={this.handleChange}
+                />
+              </div>
 
-                  <div className="wrapper d-flex justify-content-center align-items-center">
-                    <label className="name mr-3 text-muted" htmlFor="focus">
-                      Focus:
-                    </label>
-                    <input
-                      type="text"
-                      name="focus"
-                      data-index={index}
-                      value={edu.focus}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                  <div className="wrapper d-flex justify-content-center align-items-center">
-                    <label
-                      className="name mr-3 text-muted"
-                      htmlFor="yearGraduated"
-                    >
-                      Year Graduated:
-                    </label>
-                    <input
-                      type="number"
-                      name="yearGraduated"
-                      data-index={index}
-                      value={edu.yearGraduated}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                </div>
-              );
-            })}
+              <div className="wrapper d-flex justify-content-center align-items-center">
+                <label className="name mr-3 text-muted" htmlFor="focus">
+                  Focus:
+                </label>
+                <input
+                  type="text"
+                  name="undergradFocus"
+                  value={this.props.education.undergradFocus}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="wrapper d-flex justify-content-center align-items-center">
+                <label className="name mr-3 text-muted" htmlFor="yearGraduated">
+                  Year Graduated:
+                </label>
+                <input
+                  type="number"
+                  name="undergradYearGraduated"
+                  value={this.props.education.undergradYearGraduated}
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
+            {/* /.card */}
+            {/* start .card */}
+            <div className="col-md- wrapper card p-2 m-2">
+              <div className="wrapper d-flex justify-content-center align-items-center">
+                <label className="name mr-3 text-muted" htmlFor="school">
+                  School:
+                </label>
+                <input
+                  type="text"
+                  name="graduateSchool"
+                  value={this.props.education.graduateSchool}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="wrapper d-flex justify-content-center align-items-center">
+                <label className="name mr-3 text-muted" htmlFor="degree">
+                  Degree:
+                </label>
+                <input
+                  type="text"
+                  name="graduateDegree"
+                  value={this.props.education.graduateDegree}
+                  onChange={this.handleChange}
+                />
+              </div>
+
+              <div className="wrapper d-flex justify-content-center align-items-center">
+                <label className="name mr-3 text-muted" htmlFor="focus">
+                  Focus:
+                </label>
+                <input
+                  type="text"
+                  name="graduateFocus"
+                  value={this.props.education.graduateFocus}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="wrapper d-flex justify-content-center align-items-center">
+                <label className="name mr-3 text-muted" htmlFor="yearGraduated">
+                  Year Graduated:
+                </label>
+                <input
+                  type="number"
+                  name="graduateYearGraduated"
+                  value={this.props.education.graduateYearGraduated}
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
+            {/* /.card */}
           </div>
           {/* /.row */}
         </form>
