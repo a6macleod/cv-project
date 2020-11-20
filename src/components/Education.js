@@ -9,7 +9,7 @@ const Education = () => {
     undergradFocus: "Geochemistry",
     undergradYearGraduated: "2010",
     graduateSchool: "Western Michigan University",
-    graduateDegree: "Bachelor of Science",
+    graduateDegree: "Master of Science",
     graduateFocus: "Geochemistry",
     graduateYearGraduated: "2013",
   });
